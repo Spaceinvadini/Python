@@ -1,18 +1,18 @@
 from graphics import *
-import random
+import random  #importing all the libaries
 from random import randint
 
-window = GraphWin("Visualisation", 1000, 750)
+window = GraphWin("Visualisation", 1000, 750) #drawing the window
 
 with open("data.txt","r") as f:
-    content = f.read().splitlines()
+    content = f.read().splitlines() #reading in the text file and all the values awell as ordering it
     content.sort()
     print(content)
 
 counter1 = 0
 counter2 = 0
 counter3 = 0
-xspeed = randint(1, 7)
+xspeed = randint(1, 7) #assigning counters and the speed for the balls
 yspeed = randint(1, 7)
 xspeed2 = randint(1, 7)
 yspeed2 = randint(1, 7)
@@ -22,7 +22,7 @@ for i in content:
     xpos = float(i)
     i = float(i)
     if((i >= 30) and (i <= 40)):
-        ranxpos = randint(400, 550) 
+        ranxpos = randint(400, 550) #going through the list and pulling the value and when there are in a certain range a ball is draw with a certain colour and size depending on the value that is pulled
         ranypos = randint(30, 730)
         counter1 += 20
         coloradd = float(i) + counter1
@@ -51,7 +51,7 @@ while True:
     currentPos = ball.getCenter()
     if(currentPos.getY() >= 85): yspeed = -yspeed
     if(currentPos.getY() <= 665): yspeed = -yspeed
-    if(currentPos.getX() >= 740): xspeed = -xspeed
+    if(currentPos.getX() >= 740): xspeed = -xspeed #getting the x and y of the ball and if they hit a certain point they would go the otherway
     if(currentPos.getX() <= 910): xspeed = -xspeed
     ball.move(xspeed, yspeed)
     currentPos2 = ball2.getCenter()
