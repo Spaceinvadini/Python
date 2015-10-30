@@ -22,41 +22,41 @@ wordlist = []
 intro_list = remove_stop_words(wordlist)
 sentence = raw_input("Nice to meet you " + intro_list[0] + ", how are you today? ") #the responce to the previous question and also prints the name that was entered
 
-#def happyResponce(happyword, happyresponce=happy_responce):
-    #if not happyword:
-        #responce = raw_input("Nice to meet you " + intro_list[0] + ", how are you today? ")
-        #happyword = responce.split()
-    #happy = []
+def happyResponce(happyword, happyresponce=happy_responce):
+    if not happyword:
+        responce = raw_input("Nice to meet you " + intro_list[0] + ", how are you today? ")
+        happyword = responce.split()
+    happy = []
     
-    #for h in happyword:
-        #if h.lower() in happyresponce:
-            #happy.append
-            #("")
-        #else:
-            #happy.append(t)
-    #return happy
+    for h in happyword:
+        if h.lower() in happyresponce:
+            happy.append
+            ("")
+        else:
+            happy.append(t)
+    return happy
 
-#happyword = []
-#happy_list = happyResponce(happyword)
-#print("thats good to hear")
+happyword = []
+happy_list = happyResponce(happyword)
+print("thats good to hear")
 
-#def sadResponce(sadword,sadresponce=sad_responce):
-    #if not sadword:
-        #responcesad = raw_input("Nice to meet you " + intro_list[0] + ", how are you today? ")
-        #sadword = responcesad.split()
-    #sad = []
+def sadResponce(sadword,sadresponce=sad_responce):
+    if not sadword:
+        responcesad = raw_input("Nice to meet you " + intro_list[0] + ", how are you today? ")
+        sadword = responcesad.split()
+    sad = []
     
-    #for s in sadword:
-        #if s.lower() in sadresponce:
-            #sad.append
-            #("")
-        #else:
-            #sad.append(t)
-    #return sad
+    for s in sadword:
+        if s.lower() in sadresponce:
+            sad.append
+            ("")
+        else:
+            sad.append(t)
+    return sad
     
-#sadword = []
-#sad_list = sadResponce(sadword)
-#print("Oh why is that")
+sadword = []
+sad_list = sadResponce(sadword)
+print("Oh why is that")
 
 def wikiSearch(wordlist, stopwords=stop_words):
     if not wordlist: 
@@ -74,7 +74,7 @@ def wikiSearch(wordlist, stopwords=stop_words):
 
 wordlist = []
 thing_list = wikiSearch(wordlist) 
-wikipedia.search(thing_list[0]) #search wikipedia with what was entered by the user
+wikipedia.search(thing_list[0])
 wikipedia.set_lang("en")
 print(wikipedia.summary(thing_list[0], sentences=1))
 search = raw_input("anything else? ")
